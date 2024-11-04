@@ -20,11 +20,26 @@ class Page extends BaseController
 
     public function contact()
     {
-        echo view ('contact');
+        $data['name'] = 'CI News';
+        echo view ('contact', $data);
     }
 
     public function faqs()
     {
-        echo view ('faqs');
+        $data['data_faqs'] = [
+            [
+                'question'=> 'Apa itu Codeigniter',
+                'answer' => 'Codeigniter adalah framework PHP yang sangat powerful'
+            ],
+            [
+                'question' => 'Siapa yang membuat codeigniter',
+                'answer' => 'CI awalnya dibuat oleh Ellislab'
+            ],
+            [
+                'question' => 'Apakah Codeigniter masih dikembangkan',
+                'answer' => 'Codeigniter sekarang dikembangkan oleh British Columbia Institute of Technology'
+            ]
+        ];
+        echo view ('faqs', $data);
     }   
 }
